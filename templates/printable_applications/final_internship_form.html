@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href={{url_for('static',filename='css/style.css')}}>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.css">
+    <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" /> 
+    <!--External Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">                   
+    <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css">
+    <!--Zoom gallery Image Stylesheet-->    
+   <!--  <link rel="stylesheet" media="screen" type="text/css" href="{{url_for('static',filename='css/zoomimage.css')}}" />
+    <link rel="stylesheet" media="screen" type="text/css" href="{{url_for('static',filename='css/custom.css')}}" /> -->
+	<title>final_form</title>
+</head>
+
+<body>
+
+	<div class="container-fluid">
+		<div class="card rounded-0 border-0 text-center">
+			<div class="card-body">
+				<img src="/static/img/sewa_bold_new.png">
+				<div class="card-title h3 font-weight-bold p-0 m-0 text-uppercase">Social Economic Welfare Association</div>
+				<div class="card-title h3 font-weight-bold p-0 m-0 text-uppercase">Jorhat,Assam</div>
+			</div>
+		</div>
+		<div class="card rounded-0 text-center bg-secondary text-white mx-2">
+			<div class="card-body p-0 m-0">
+				<div class="card-title h3 font-weight-bold p-0 m-0 text-uppercase">Internship Form</div>
+			</div>
+		</div>
+		<div class="row my-2">
+			
+			<div class="col-md-6 d-inline">
+				<div class="card rounded-0 border-0 ml-2">
+					<div class="card-body py-2 mt-2">
+						<p class="d-inline h5 font-weight-bold">Name:</p>
+						<p class="d-inline h5 text-capitalize">{{intern.name}}</p>
+					</div>
+					<div class="card-body py-2">
+						<p class="d-inline h5 font-weight-bold">Date of Birth:</p>
+						<p class="d-inline h5">{{intern.dob}}</p>
+					</div>
+					<div class="card-body py-2">
+						<p class="d-inline h5 font-weight-bold">Email:</p>
+						<p class="d-inline h5">{{intern.email}}</p>
+					</div>
+					<div class="card-body py-2">
+						<p class="d-inline h5 font-weight-bold">Phone:</p>
+						<p class="d-inline h5">{{intern.phone}}</p>
+					</div>
+					<div class="card-body py-2">
+						<p class="d-inline h5 font-weight-bold">Gender:</p>
+						<p class="d-inline h5">{{intern.gender}}</p>
+					</div>
+					<div class="card-body py-2">
+						<p class="d-inline h5 font-weight-bold">Nationality:</p>
+						<p class="d-inline h5 text-capitalize">{{intern.nationality}}</p>
+					</div>
+					<div class="card-body py-2 mb-3">
+						<p class="d-inline h5 font-weight-bold">Contact Address:</p>
+						<p class="d-inline h5">{{intern.contactadd}}</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-6 d-inline">
+				<div class="card rounded-0 p-0 text-center border-0">
+					<div class="card-body">
+						<img src="{{url_for('static',filename='upload/interns_img/photo/'+intern.photopath)}}" style="width: 40%; height: 100%;">
+					</div>
+					<div class="card-body">
+						<img src="{{url_for('static',filename='upload/interns_img/signature/'+intern.signpath)}}" style="width: 40%; height: 100%;">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="card rounded-0 text-center p-0 m-0 bg-secondary text-white mx-2">
+			<div class="card-body p-0 m-0">
+				<div class="card-title h3 font-weight-bold p-0 m-0 text-uppercase">Details</div>
+			</div>
+		</div>
+
+		<div class="card rounded-0 border-0 text-justify mx-2">
+					<div class="card-body py-2 mt-2" >
+						<p class="d-inline h5 font-weight-bold">Permanent Address:</p>
+						<p class="d-inline h5">{{intern.permanentadd}}</p>
+					</div>
+					<div class="card-body py-2">
+						<p class="d-inline h5 font-weight-bold">Area of Interest:</p>
+						<p class="d-inline h5 font-italic">{{intern.area_of_interest}}</p>
+					</div>
+					<div class="card-body py-2">
+						<p class="d-inline h5 font-weight-bold">Language</p>
+						<p class="d-inline h5">{{intern.lang}}</p>
+					</div>
+					<div class="card-body py-2">
+						<p class="d-inline h5 font-weight-bold">Additional Courses:</p>
+						<p class="d-inline h5">{{intern.add_course}}</p>
+					</div>
+					<div class="card-body py-2">
+						<p class="h5 font-weight-bold">How do you think the learnings from this internship will be useful in your professional and personal life?</p>
+						<p class="h5">{{intern.learnings}}</p>
+					</div>
+					<div class="card-body py-2">
+						<p class="h5 font-weight-bold">What motivated you to apply for an internship with SEWA? Please mention in not more than 200 words?</p>
+						<p class="h5">{{intern.motivation}}</p>
+					</div>
+					<div class="card-body py-2 mb-3">
+						<p class=" h5 font-weight-bold">Have you participated/volunteered/interned on an any programme? If yes, please describe the activity and your role very briefly:</p>
+						<p class="h5">{{intern.voluntary}}</p>
+					</div>
+		</div>
+		
+	</div>
+
+
+
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js"></script>
+    <script src={{url_for('static',filename='js/jquery.counterup.js')}}></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src={{url_for('static',filename='js/myScript.js')}}></script>
+</body>
+
+</html>

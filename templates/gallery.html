@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% from 'src_dashboard/macros.html' import render_pagination %}
+{% block title%}IMAGE GALLERY{% endblock %}
+{% block content %}
+
+                                            <!--Starting of Content or Body part-->
+
+            <div id="subpage-header-back" class="card rounded-0 text-white mb-3">
+              <div class="card-header text-center text-justify my-3">
+                <h5 class="h2 font-weight-bold">GALLERY</h5>
+                <div class="row">
+                  <div class="col-4"></div>
+                  <div class="col-4 text-center">
+                      
+                      <div class="bc-icons">
+                            <ul class="cus-breadcrumb bg-transparent">
+                                <li class="breadcrumb-item h5"><a class="text-blue " href="#">HOME</a><i class="fas fa-caret-right mx-2"
+                                    aria-hidden="true"></i></li>
+                                <li class="breadcrumb-item active h5"><a class="text-white " href="#">GALLERY</a></li>
+                            </ul>
+                      </div> 
+                  </div> 
+
+                  <div class="col-4"></div>
+                </div>  
+              </div>
+            </div>
+
+            <!--Important Notice-->
+
+            <div class="card bg-danger rounded-0 mt-0">
+                <div class="card-header">
+                  <marquee><h4 class="font-weight-bold text-white my-sm-auto my-md-3">This Site is Under Contruction.To know more about us or for any queries please visit the ContactUs page or scroll down.</h4></marquee>
+                </div>
+              </div>
+
+              
+          <!--MAIN CONTENT OF BODY-->
+          <div class="container-fluid py-3">        
+          {% for img_row in img_list.items| batch(3,'&nbsp;' ) %}
+            <div class="row d-flex justify-content-center">
+                {% for img_col in img_row %}
+                  {% if img_col == '&nbsp;' %}
+                  
+                  {% else %}
+                  <div class=" card rounded-0 border-0 mx-3 my-3" style="width: 25rem;height: 15rem;">
+                    <a class="open-galleryImg" data-toggle="modal" href="#imagedisplay"><img src="{{url_for('static',filename='upload/gallery_img/'+img_col.imgname)}}" class="img_sec"></a>
+                    
+                    <!-- <p>{{img_col}}</p> -->
+                  </div>
+                  {% endif %}
+                {% endfor %}
+            </div>      
+          {% endfor %}
+          </div>
+
+
+          <div class="container-fluid my-3 d-flex justify-content-center">
+            {{render_pagination(img_list,'galleryitems')}}
+          </div>
+
+          <div class="modal fade bd-example-modal-lg p-0" id="imagedisplay" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered p-0" role="document">
+              <div class="modal-content border-0 bg-transparent p-0">
+              <!--   <div class="container my-3 text-center">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div> -->
+                <div class="modal-body mb-3 p-0 myImgbody text-center">
+                  
+                      <img class="img-fluid" id="imgId" src="">
+             
+                </div>
+                
+              </div>
+            </div>
+          </div>
+     
+
+
+
+
+           
+
+          {% endblock %}

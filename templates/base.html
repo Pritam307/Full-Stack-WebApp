@@ -1,0 +1,341 @@
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    
+   
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href={{url_for('static',filename='css/style.css')}}>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.css">
+    <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" /> 
+    <!--External Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">                   
+    <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css">
+    <!--Zoom gallery Image Stylesheet-->    
+   <!--  <link rel="stylesheet" media="screen" type="text/css" href="{{url_for('static',filename='css/zoomimage.css')}}" />
+    <link rel="stylesheet" media="screen" type="text/css" href="{{url_for('static',filename='css/custom.css')}}" /> -->
+
+
+<!--=======================================================================-->
+
+    <title>{% block title %}{% endblock %}</title>
+
+  </head>                      
+
+      
+  <body>
+
+      <div class="container mt-3">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <ul class=flashes>
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }} alert-dismissible text-center" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span></button>
+                  {{ message }}
+                </div>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+      </div>
+      <!--<div class="loading"></div> -->
+      <div id="fb-root"></div>
+      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.2"></script>
+    
+      
+  <!--Starting of navigation bar -->
+      <div class="container-fluid sticky-top p-0 m-0">
+        <div class="card rounded-0 border-0  text-center  d-flex align-self-center p-0" id="top-nav" style="width: 100%;">
+          <div class="card-title text-white">Become a member</div>
+        </div>
+      
+    
+       <nav id="custom-nav" class="navbar navbar-expand-lg ">
+       
+            <a class="navbar-brand" href="{{url_for('index')}}">
+              <img src="{{url_for('static',filename='img/sewa_bold_new.png')}}" width="50" height="50" class="d-inline-block align-top" alt="">
+              <span class="navbar-text text-logo-color font-weight-bold ml-2 h3">SEWA</span> 
+            </a>
+            <button class="navbar-toggler border-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span ><i id="cus-hamburger-icon" style="font-size: 32px; color: #111120;" class="la la-bars"></i></span>
+            </button>
+
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            
+  
+          
+            <ul class="nav navbar-nav ml-auto " id="sewa-nav"> 
+ 
+              <li class="nav-item active">
+                <a class="nav-link h6 font-weight-bold" href={{url_for('index')}}>Home<span class="sr-only">(current)</span></a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle h6" href={{url_for('about')}} id="navbarDropdown" aria-haspopup="true" aria-expanded="false">About Us</a>
+
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Governing Board</a>
+                    <a class="dropdown-item" href="#">Mission & Vission</a>
+                    <a class="dropdown-item" href="#">Programmes</a>
+                    <a class="dropdown-item" href="#">Initiatives</a>
+                    <a class="dropdown-item" href="#">Sister Organizations</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Comming Progress..</a>
+                  </div>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle h6" href={{url_for('our_works')}} id="navbarDropdown" aria-haspopup="true" aria-expanded="false">Our Works </a>
+                <div class="dropdown-menu text-capitalize" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item text-capitalize" href="#">How we work?</a>
+                  <a class="dropdown-item text-capitalize" href="#">History & Milestones</a>
+                  <a class="dropdown-item text-capitalize" href="#">Case Studies</a>
+                  <a class="dropdown-item text-capitalize" href="#">annual activties</a>
+                  <a class="dropdown-item text-capitalize" href="#">annual report</a>
+                  <a class="dropdown-item text-capitalize" href="#">performance highlight</a>
+                  
+                </div>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link h6" href={{url_for('gallery')}}>Gallery</a>
+              </li>
+
+              <li class="nav-item ">
+                  <a class="nav-link  h6" href="#" id="navbarDropdown"  aria-haspopup="true" aria-expanded="false">Media</a>
+
+                  <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">2019</a>
+                      <a class="dropdown-item" href="#">2018</a>
+                      <a class="dropdown-item" href="#">2017</a>
+                      <a class="dropdown-item" href="#">2016</a>
+                      <a class="dropdown-item" href="#">2015</a>
+                    </div> -->
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link h6" href="#">Publication</a>
+              </li>
+
+               <li class="nav-item">
+                <a class="nav-link h6" href="#">Blog</a>
+               </li>
+
+              <li class="nav-item">
+                <a class="nav-link  h6" href={{url_for('contact')}}>Contact Us</a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle h6" id="navbarDropdown"  aria-haspopup="true" aria-expanded="false">Carrier</a>
+
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="{{url_for('internship')}}">Internship</a>
+                      {% if status == 'True' %}
+                        <a class="dropdown-item" href="{{url_for('vacancy_form')}}">Vaccancy</a>
+                      {% endif %}
+
+                    </div>
+              </li>
+
+            </ul>
+          
+            {% if current_user.verified and current_user.is_authenticated %}
+                <li class="nav-item sewa-nav dropdown d-flex flex-row align-items-center nav-profile pl-md-1 " id="sewa-nav">
+                  <a class="nav-link dropdown-toggle h6 align-self-center text-logo-color font-weight-bold px-0" id="navbarDropdown" aria-haspopup="true" aria-expanded="false">{{current_user.username}}</a>
+                  <i style="font-size: 25px; color:#1C4E80" class="fas fa-user-circle align-self-center pb-1 ml-1"></i>
+
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="{{url_for('profile')}}">Profile</a>
+                      <a class="dropdown-item" href="#">Settings</a>
+                      {% if current_user.admin %}
+                        <a class="dropdown-item" href="{{url_for('dashboard')}}">Dashboard</a>
+                      {% endif %}
+                      <a class="dropdown-item" href="{{url_for('signout')}}">SignOut</a>
+                      
+                    </div>
+                </li>
+            {% elif current_user.is_authenticated %}
+                <li class="nav-item dropdown d-flex flex-row align-items-center nav-profile pl-md-1" id="sewa-nav">
+                  <a class="nav-link dropdown-toggle h6 align-self-center text-logo-color font-weight-bold px-0 " id="navbarDropdown" aria-haspopup="true" aria-expanded="false">{{current_user.username}}</a>
+                  <i style="font-size: 25px; color:#1C4E80" class="fas fa-user-circle align-self-center pb-1 ml-1"></i>
+
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="{{url_for('unconfirmed')}}">Profile</a>
+                      <a class="dropdown-item" href="#">Settings</a>
+                      <a class="dropdown-item" href="{{url_for('signout')}}">SignOut</a>
+                      
+                    </div>
+                </li>
+            {% endif %}
+
+            {% if current_user.is_authenticated %}
+                <li class="nav-item">
+                    <!-- <a class="nav-link " href="{{url_for('signin')}}"><button class="btn btn-primary h6 font-weight-bold text-logo-color">Sign In</button> </a> -->
+                </li>
+            {% else %}
+                  <li class=" bd-highlight d-flex justify-content-center">
+                    <a class="nav-link " href="{{url_for('signin')}}"><button class="btn btn-outline-success h6 my-2 mb-sm-2 ml-md-2 pt-2 pb-2 font-weight-bold text-logo-color ">Sign In</button> </a>
+                </li>
+            {% endif %}
+              
+          <div class= "bd-highlight d-flex justify-content-center ">
+            <a href={{url_for('donate')}}><button  type="button" class="btn btn-primary btn-outline-success font-weight-bold text-white my-2 mb-sm-2 ml-md-2 pt-2 pb-2" >Donate Now</button></a>
+          </div>
+
+      </div>
+ 
+      </nav>
+
+    </div>
+
+
+
+      
+        
+
+       
+                                          <!--Starting of Content or Body part-->
+      {% block content %}
+      {% endblock %}
+
+
+
+
+            <!--<div class="line-border"></div>-->
+                <!--Real Footer  Section-->
+
+                <div class="card text-left bg-dark-blue rounded-0 mt-0.5">
+                  <div class="row">
+
+                    <div class="col-sm-4 mx-0 ">
+                        <div class="col my-4 ">
+                            <div class="row-6 ml-sm-2 " id="quick-link-text" >
+                                <h5 class="text-white-50 font-weight-bold mx-3"><a href="contact_us.html">CONTACT US</a></h5>
+                                  
+                                  <div class="row">
+                                    <div class="container team-contact-info">
+                                      
+                                      <li>
+                                        <i style="font-size: 15px; color: whitesmoke" class="fas fa-map-marker-alt mr-2 mt-1"></i>
+                                        Khongia Gaon, Jorhat -785616 (ASSAM)
+                                        
+                                      </li>
+
+                                      <li>
+                                          <i style="font-size: 15px; color: whitesmoke" class="fas fa-phone mr-2 mt-1"></i>
+                                          +91-70025-13935
+                                      </li>
+                                      <li>
+                                          <i style="font-size: 15px; color: whitesmoke" class="fas fa-envelope mr-2 mt-1"></i>
+                                          info@sewaorganisation.org
+                                      </li>
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                          
+                            <div class="row-6">
+                                <div class="card-body ">
+                                    <h5 class="card-title text-wight-50 font-weight-bold">FOLLOW & SHARE US</h5>
+                                    <div class="row mx-auto">
+                                      <a href={{sewa_links["fb_uri"]}} target="_blank"> <i style="font-size: 20px; color:whitesmoke;" class="fab fa-facebook-f mr-3"></i></a>
+                                      <a href="https://www.google.com" target="_blank"><i style="font-size: 20px; color:whitesmoke;" class="fab fa-google-plus-g mr-3"></i></a>
+                                      <a href="https://www.google.com" target="_blank"><i style="font-size: 20px; color:whitesmoke;" class="fab fa-linkedin-in mr-3"></i></a>
+                                      <a href="https://www.google.com" target="_blank"><i style="font-size: 20px; color:whitesmoke;" class="fab fa-twitter mr-3"></i></a>
+                                      <a href="https://www.google.com" target="_blank"><i style="font-size: 20px; color:whitesmoke;" class="fab fa-instagram mr-3"></i></a>
+                                      <a href="https://www.google.com" ><i style="font-size: 20px; color:whitesmoke;" class="fab fa-whatsapp mr-3"></i></a>
+                                      <a href="https://www.google.com" ><i style="font-size: 20px; color:whitesmoke;" class="fas fa-share-alt"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                    </div>  
+
+                    <div class="col-sm-4 mx-0">
+                      <div class="card-body">
+                        <h5 class="card-title text-center text-wight-50 font-weight-bold"><Fieldset>FACEBOOK</Fieldset></h5>
+                       
+                        <div class="fb-post" data-href="https://www.facebook.com/20531316728/posts/10154009990506729/" data-width="500" data-show-text="true">
+                          <blockquote cite="https://developers.facebook.com/20531316728/posts/10154009990506729/" class="fb-xfbml-parse-ignore">Posted by <a href="https://www.facebook.com/facebook/">Facebook</a> on&nbsp;<a href="https://developers.facebook.com/20531316728/posts/10154009990506729/">Thursday, 27 August 2015</a>
+                          </blockquote>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="card-body mr-3 text-justify text-center text-white" id="quick-link-text">
+                        <h5 class="card-title text-wight-50 font-weight-bold">QUICK LINKS</h5>
+                        
+                        <p class="card-text"><a href="index.html">Home</a></p>
+                        <p class="card-text"><a href="about_us.html">About Us</a></p>
+                        <p class="card-text"><a href="#">Gallery</a></p>
+                        <p class="card-text"><a href="#">Media</a></p>
+                        <p class="card-text"><a href="#">Publication</a></p>
+                        <p class="card-text"><a href="#">Contact Us</a></p>
+                        <p class="card-text"><a href="#">Research</a></p>
+                        <p class="card-text font-weight-bold"><a href="donate.html">Donate Now</a></p>
+                        <p class="card-text"><a href={{sewa_links["nest_uri"]}} target="_blank">www.nests.org.in</a></p>
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+
+                <!--Designed By Sewa It Unit-->
+                <div class="line-border"></div>
+
+                <div  class="card bg-dark-blue text-center rounded-0 mt-0.5">
+                  <div class="card-header rounded-6">
+                    <div class="row">
+                      <div class="col-sm-6">
+                          <h6 class="text-white h6 m">Copyright &copy; SEWA 2019. All Rights Reserved</h6>
+                      </div>
+
+                      <div  class="col-sm-6" id="it-team-link">
+                          <h6>Designed By: <a href="{{url_for('it_team')}}" class="h6" >SEWA IT Team</a></h6>
+                          
+                      
+                      </div>
+                  </div>
+                  </div>
+                </div>
+            
+          
+  
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js"></script>
+    <script src={{url_for('static',filename='js/jquery.counterup.js')}}></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src={{url_for('static',filename='js/myScript.js')}}></script>
+    <script type="text/javascript" src="{{url_for('static',filename='js/bs-custom-file-input.js')}}"></script>
+    
+<!--     <script type="text/javascript" src="{{url_for('static',filename='js/eye.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename='js/utils.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename='js/zoomimage.js')}}"></script> -->
+  </body>
+
+  
+  
+</html>

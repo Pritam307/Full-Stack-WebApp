@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{% block title%}ABOUT US{% endblock %}
+
+{% block content %}
+                                            <!--Starting of Content or Body part-->
+
+           <div id="subpage-header-back" class="card rounded-0 text-white mb-3">
+              <div class="card-header text-center text-justify my-3">
+                <h5 class="h2 font-weight-bold">ABOUT US</h5>
+                <div class="row">
+                  <div class="col-4"></div>
+                  <div class="col-4 text-center">
+                      
+                      <div class="bc-icons">
+                            <ul class="cus-breadcrumb bg-transparent ">
+                                <li class="breadcrumb-item h6"><a class="text-blue " href="#">Home</a><i class="fas fa-caret-right mx-2"
+                                    aria-hidden="true"></i></li>
+                                <li class="breadcrumb-item active h6"><a class="text-white " href="#">About Us</a></li>
+                            </ul>
+                      </div> 
+                  </div> 
+
+                  <div class="col-4"></div>
+                </div>  
+              </div>
+            </div> 
+
+                  
+              <!--DONATION BUTTON SIDEBAR-->
+              <div id="mySideNav" class="sidenav">
+                <a href= {{url_for('donate')}} id="donate">Donate Now</a>
+              </div>
+
+
+             <!--Important Notice-->
+
+             <div class="card border-0 bg-danger rounded-0 mt-0">
+                <div class="card-header">
+                    <marquee><h4 class="font-weight-bold text-white my-sm-auto my-md-3">This Site is Under Contruction.To know more about us or for any queries please visit the ContactUs page or scroll down.</h4></marquee>
+                </div>
+             </div>
+        
+
+            <!--MAIN CONTENT PART-->
+            
+            <div class="card border-0 mx-3 px-3" >
+              <div class="card-body text-center py-0 pt-3">
+
+                  <div class="row d-flex flex-row align-items-center ">
+                    <div class="col-md-2 text-center">
+                      <img src={{url_for('static',filename='img/sewa_bold_new.png')}}  class="img-fluid position-relative mx-3 my-3" alt="...">
+                    </div>
+                    <div class="col-md-10" >
+                      
+                      <p id="text-line-space" class=" font-weight-lighter text-justify text-muted h5">SEWA is a nongovernmental organisation and empowerment oriented service.It is an organisation of poor, vulnerable and every energetic Indian who believes in himself and has the courage to work  turn their big dream into  reality.These groups are those that  earn a living through their own labour or small businesses.They do not obtain regular salaried employment with welfare benefits like workers in the organised sector. However their work is not counted and hence remains invisible.In fact, unorganized workers themselves remain uncounted, under counted and invisible.</p>
+                        
+                    </div>
+                  </div>
+               </div>   
+                  
+              </div>
+
+              <div class="card border-0 mx-3 px-3 my-0">
+                  <div class="card-body text-center py-0">
+                     <p id="text-line-space" class=" h5 font-weight-lighter text-muted text-justify">SEWA is both an organisation and a movement.The SEWA movement is enhanced by its being a sangam or confluence of three movements: the labour movement, the cooperative movement and self empowerment movement.But it is also a movement of self-employed workers: their own, home-grown movement.Through their own movement their tremendous economic and social contributions become recognised with globalization, liberalization and other economic changes, there are both new opportunities as well as threats to some traditional areas of employment.
+
+                    </p>
+                  </div>
+                </div>
+
+              <div class="card border-0 mx-3 px-3 my-0">
+                <div class="card-body text-center ">
+                  <div class="card rounded border-0 bg-success mb-4">
+                    <div class="card-title h4  font-weight-bold pt-3 pb-2 text-white">GOALS</div>
+                  </div>
+                    
+                   <p id="text-line-space" class="card-text h5 font-weight-lighter text-muted text-justify">SEWA’s main goals are to organize vulnerable workers for full employment.Full employment means employment whereby workers obtain work security, income security, food security and social security (at least health care, child care and shelter).SEWA organises vulnerable section to ensure that every family obtains full employment.By self-reliance we mean that everyone will be autonomous and self-reliant, individually and collectively, both economically and in terms of their decision-making ability.
+                  </p>
+                </div>
+              </div>
+
+              <div class="card border-0 mx-3 px-3">
+                  <div class="card-body text-center">
+                     <p id="text-line-space" class=" h5 font-weight-lighter text-muted text-justify">At SEWA we organise workers to achieve their goals of full employment and self reliance through the strategy of struggle and development. The struggle is against the many constraints and limitations imposed on them by society and the economy, while development activities strengthen bargaining power and offer them new alternatives. Practically, the strategy is carried out through the joint action of union and cooperatives. Gandhian thinking is the guiding force for SEWA’s poor, self-employed members in organising for social change.
+
+                    </p>
+                  </div>
+                </div>
+
+                <div class="card border-0 mx-3 px-3 mb-3">
+                    <div class="card-body text-center ">
+                       
+                       <p id="text-line-space" class="card-text h5 font-weight-lighter text-muted text-justify">More than ever, our members are ready to face the winds of change. They know that they must organise to build their own strength and to meet challenges. There are still millions  who remain in poverty and are exploited, despite their long hours of hard labour. They bear the brunt of the changes in our country and must be brought into the mainstream, so as to avail of the new opportunities that are developing with regard to employment.
+                      </p>
+                    </div>
+                  </div>
+
+                  
+  
+
+
+            
+    {% endblock %}

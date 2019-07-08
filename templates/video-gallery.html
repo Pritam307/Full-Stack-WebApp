@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title%}VIDEO GALLERY{% endblock %}
+{% block content %}
+
+						<!--Starting of Content or Body part-->
+
+           <div id="subpage-header-back" class="card rounded-0 text-white mb-3">
+              <div class="card-header text-center text-justify my-3">
+                <h5 class="h2 font-weight-bold">SUCCESS STORIES</h5>
+                <div class="row">
+                  <div class="col-4"></div>
+                  <div class="col-4 text-center">
+                      
+                      <div class="bc-icons">
+                            <ul class="cus-breadcrumb bg-transparent ">
+                                <li class="breadcrumb-item h6"><a class="text-blue " href="#">Home</a><i class="fas fa-caret-right mx-2"
+                                    aria-hidden="true"></i></li>
+                                <li class="breadcrumb-item active h6"><a class="text-white " href="#">Videos</a></li>
+                            </ul>
+                      </div> 
+                  </div> 
+
+                  <div class="col-4"></div>
+                </div>  
+              </div>
+            </div> 
+            
+		  <div class="container-fluid p-0">        
+			{% for video_row in filelist | batch(3,'&nbsp;' ) %}
+				<div class="row d-flex justify-content-center">
+						{% for video_col in video_row %}
+							{% if video_col == '&nbsp;' %}
+							
+							{% else %}
+							<div class="video-sec card rounded-0 mx-3 my-3">
+								<iframe  src={{"https://www.youtube.com/embed/"+video_col.vid}} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								
+							</div>
+							{% endif %}
+						{% endfor %}
+				</div>			
+			{% endfor %}
+			</div>
+
+  {% endblock %}

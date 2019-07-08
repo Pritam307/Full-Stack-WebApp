@@ -1,0 +1,41 @@
+{% extends 'src_dashboard/dash_layout.html' %}
+
+{% block content %}
+
+<div class="container-fluid my-2">
+	<div class="card rounded bg-white ">
+		<div class="row d-flex align-items-center ">
+			<div class="col-md-6 ">
+				<div class="card-body">
+					<div class="card-titile"> Set Internship Application fee</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<form action="/setapplcnfee" method="post" class="row">
+					<div class="col-md-6">
+						
+						<div class="input-group">
+							  <div class="input-group-prepend">
+							    <span class="input-group-text">&#8377</span>
+							  </div>
+							 
+							  	<input type="number" class="form-control" name="internfee" aria-label="Amount (to the nearest dollar)">
+							 
+							  <div class="input-group-append">
+							    <span class="input-group-text">.00</span>
+							  </div>
+						</div>
+					</div>
+
+					<div class="col-md-6 d-flex justify-content-center">
+						<button  type="submit" name="internfeebtn" class=" btn btn-primary" >Set</button>
+					</div>
+				</form>
+
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+{% endblock %}    

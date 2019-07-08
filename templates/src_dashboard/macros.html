@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+</head>
+<body>
+
+
+	<div class="container-fluid d-flex align-items-end">
+		<nav aria-label="...">
+		  <ul class="pagination">
+			{% macro render_pagination(pagination,endpoint) %}
+			  <div class= pagination>
+			  {% if pagination.has_prev %}
+			    <li class="page-item">
+			      <a class="page-link" href="{{ url_for(endpoint,page_num =(pagination.page - 1))
+			      }}" tabindex="-1" aria-disabled="true">Previous</a>
+			    </li>
+			  {% else %}
+			  	<li class="page-item disabled">
+			      <a class="page-link" href="" tabindex="-1" aria-disabled="true">Previous</a>
+			    </li>
+			  {% endif %}
+
+			  {%- for page in pagination.iter_pages(left_edge=3, left_current=2, right_current=2, right_edge=3) %}
+			    {% if page %}
+			      {% if page != pagination.page %}
+			      	<li class="page-item">
+			      		<a class="page-link" href="{{ url_for(endpoint,page_num=page) }}">{{page}}</a>
+			      	</li>
+				    
+			        <!-- <a href="{{ url_for(endpoint,page_num=page) }}">{{ page }}</a> -->
+			      {% else %}
+			        <li class="page-item active" aria-current="page">
+				      <a class="page-link" href="{{ url_for(endpoint,page_num=page) }}">{{ page }}<span class="sr-only">(current)</span></a>
+				    </li>
+			      {% endif %}
+			    {% else %}
+			      <span class=ellipsis>…</span>
+			    {% endif %}
+			  {%- endfor %}
+
+			  {% if pagination.has_next %}
+		<!-- 	    <a href="{{ url_for(endpoint,page_num =(pagination.page + 1))
+			      }}">Next </a> -->
+			    <li class="page-item">
+			      <a class="page-link" href="{{ url_for(endpoint,page_num =(pagination.page + 1))
+			      }}">Next</a>
+			    </li>
+			  {% else %}
+			  	<li class="page-item disabled">
+			      <a class="page-link" href="" tabindex="-1" aria-disabled="true">Next</a>
+			    </li>
+			  {% endif %}
+			  	</div>
+			{% endmacro %}
+		  </ul>
+		</nav>
+	</div>
+
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{url_for('static',filename='js/myScript.js')}}"></script>  
+</body>
+</html>
+
+

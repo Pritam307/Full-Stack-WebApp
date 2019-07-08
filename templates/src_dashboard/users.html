@@ -1,0 +1,95 @@
+{% extends 'src_dashboard/dash_layout.html' %}
+{% from 'src_dashboard/macros.html' import render_pagination %}
+{% block content %}
+
+
+<div class="container-fluid">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              <ul class=flashes>
+              {% for category, message in messages %}
+                   <div class="alert alert-{{ category }} text-center fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span></button>
+                        {{ message }}
+                    </div>
+              {% endfor %}
+              </ul>
+            {% endif %}
+    {% endwith %}
+</div>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-hover text-center ">
+      <thead class="thead-dark">
+        <tr>
+          <!-- <th scope="col">Slno</th> -->
+          <th scope="col" class="text-uppercase">Name</th>
+          <th scope="col" class="text-uppercase">Email</th>
+          <th scope="col" class="text-uppercase">Username</th>
+          <th scope="col" class="text-uppercase">Address</th>
+          <th scope="col" class="text-uppercase">Phone</th>
+          <th scope="col" class="text-uppercase">Verified</th>
+          <th scope="col" class="text-uppercase">Remove</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for user in userslist.items %}
+        <thead class="text-center user-table">
+            <tr>
+              <!-- <th scope="row">{{loop.index}}</th> -->
+              <td>{{[user.firstname, user.lastname]|join(' ')}}</td>
+              <td>{{user.email}}</td>
+              <td>{{user.username}}</td>
+              <td>{{user.address}}</td>
+              <td>{{user.phone}}</td>
+              {% if user.verified %}
+                <td class="text-success font-weight-bold">{{user.verified}}</td>
+              {% else %}
+                <td class="text-danger font-weight-bold">{{user.verified}}</td>
+              {% endif %}
+              {% if user.admin %}
+                  <td>
+                    <i class="la la-trash-o" style="opacity: 0.2"></i>
+                  </td>
+              {% else %}
+                  <td>
+                    <a href="#" data-toggle="modal" data-target="#exampleModalCenter"><i class="la la-trash-o" style="opacity: 0.7"></i></a>
+                  </td>
+              {% endif %}
+              
+
+            </tr>
+        </thead> 
+
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header text-center my-0">
+                  <p class="text-danger font-weight-bold">Warning</p>
+              </div>  
+              <div class="modal-body text-center">
+                <p class="text-dark">Do you sure want to remove this user?</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <a href="{{url_for('user_del',email=user.email)}}"><button type="button" class="btn btn-primary">Delete</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+    <div class="container-fluid d-flex justify-content-center mt-4">
+        {{render_pagination(userslist,'userpages')}}
+    </div>
+
+
+
+
+{% endblock %}

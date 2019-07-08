@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+{% block content %}
+
+<div class="container d-flex justify-content-center">
+	<div class="card rounded-0" style="width: 60%;">
+		<div class="card-body">
+			<form class="my-2" action="/offlinepay" method="post" enctype="multipart/form-data">
+				{{form.hidden_tag()}}
+				<div class="form-group p-2 m-2 " id="cus-validators">
+						<label for="name" class="font-weight-bold">Username</label>
+						<!-- <input type="text" name="name" id="name" class="form-control" aria-describebly="emailhelp" placeholder="Username"> -->
+						{{wtf.form_field(form.username,class='form-control',placeholder='Username')}}
+				</div>
+				
+				<div class="form-group p-2 m-2" id="cus-validators">
+				    <label for="exampleFormControlSelect1" class="font-weight-bold">Career</label>
+				   <!--  <select class="form-control" id="exampleFormControlSelect1" >
+				      <option>Internship</option>
+				      <option>Vacancy</option>
+				    </select> -->
+				    {{wtf.form_field(form.career,class='form-control')}}
+				   
+			 	</div>
+
+			 	<div class="input-group p-2 m-2 ">
+				   <div class="custom-file mr-3">
+				    <input type="file" name="reciept" class="custom-file-input" id="inputGroupFile01">
+				    <label class="custom-file-label" for="inputGroupFile01">Upload reciept</label>
+				   </div>
+				</div>
+
+				<div class="d-flex justify-content-center my-3">
+					<!-- <a href="https://www.instamojo.com/@SEWA_ORGANISATION/l816e3478abd24d1a985c411a876ad353/" rel="im-checkout" data-behaviour="link" data-style="flat" data-text="Checkout With Instamojo"></a>
+					<script src="https://js.instamojo.com/v1/button.js"></script> -->
+					<button type="submit" class="btn btn-primary button-outline-success"> Upload</button>
+				</div>
+
+
+			</form>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends 'src_dashboard/dash_layout.html' %}
+
+{% block content %}
+
+<div class="container-fluid m-0">
+	<div class="card rounded bg-white">
+		<div class="row d-flex align-items-center ">
+			<div class="col-md-7">
+				<div class="card-body">
+					<div class="card-titile"> Indicate vancancy</div>
+				</div>
+			</div>
+
+			<div class="col-sm-1 d-flex justify-content-lg-end justify-content-center ">
+			
+				{% if status == 'True' %}
+				<div class="custom-control custom-radio">
+					  <input type="radio" class="custom-control-input" id="vacancy-indicator" name="vacancy_status" checked >
+					  <label class="custom-control-label" for="vacancy-indicator"></label>
+				</div>
+				{% elif status == 'False' %}
+				<div class="custom-control custom-radio">
+					  <input type="radio" class="custom-control-input" id="vacancy-indicator" name="vacancy_status" >
+					  <label class="custom-control-label" for="vacancy-indicator"></label>
+				</div>
+				{%endif%}
+			</div>
+
+			<div class="col-sm-2 d-flex justify-content-lg-end align-items-end">
+				<a href="{{url_for('vacancy_indicate',status=true)}}"><button  type="button" id="activate" class="positive btn btn-primary " >ON</button></a>
+			</div>
+
+			<div class="col-sm-2 d-flex justify-content-lg-start align-items-end">
+				<a href="{{url_for('vacancy_indicate',status=false)}}"><button  type="button" id="deactivate" class="negative btn btn-primary" >OFF</button></a>
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+
+
+<div class="container-fluid my-2">
+	<div class="card rounded bg-white">
+		<div class="row d-flex align-items-center ">
+			<div class="col-md-6 ">
+				<div class="card-body">
+					<div class="card-titile"> Set Vacancy Application fee</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<form action="/setapplcnfee" method="post" class="row">
+					<div class="col-md-6">
+						
+						<div class="input-group">
+							  <div class="input-group-prepend">
+							    <span class="input-group-text">&#8377</span>
+							  </div>
+							 
+							  	<input type="number" class="form-control" name="vacancyfee" aria-label="Amount (to the nearest dollar)">
+							 
+							  <div class="input-group-append">
+							    <span class="input-group-text">.00</span>
+							  </div>
+						</div>
+					</div>
+
+					<div class="col-md-6 d-flex justify-content-center">
+						<button  type="submit" name="vacancyfeebtn" class=" btn btn-primary" >Set</button>
+					</div>
+				</form>
+
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+{% endblock %}

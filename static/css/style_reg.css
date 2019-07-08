@@ -1,0 +1,105 @@
+
+/*=============REGISTER FORM STYLE==========================================================*/
+@import "https://fonts.googleapis.com/css?family=Karla&display=swap";
+
+body{
+  font-family: 'Karla',sans-serif;
+  background: linear-gradient(90deg,#59a2e6,#254e8d);
+}
+
+a{
+  text-decoration-style: none;
+  outline: none;
+}
+a:hover{
+  text-decoration: none;
+  outline: none;
+}
+.text-sewa{
+  color: #59a2e6;
+  font-size: 20px;
+}
+.control-label{
+  display: none;
+}
+
+#register-card{
+  margin-top: 8%;
+  /*box-shadow: 15px 15px 25px grey;*/
+  border: 3px;
+  border-radius: 10px 10px 10px 10px;
+}
+
+
+.custom-input input[type=text], select, textarea {
+  width: 91%;
+  padding: 9px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 12px;
+  
+}
+.custom-input input[type=password], select, textarea {
+  width: 91%;
+  padding: 9px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  
+}
+.custom-input input[type=number], select, textarea {
+  width: 91%;
+  padding: 9px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.reg-img img{
+  height: 100%;
+  width: 100%;
+}
+  #cus-validators p{
+    color: red;
+    margin-left: 10px;
+    font-size: 14px;
+  }
+
+  .divider{
+    height: 35vh;
+    border-left: 1px solid #254e8d;
+    opacity: 1;
+  }
+
+  .agreement label{
+    font-size: 13px;
+  }
+  
+@media(max-width: 767px){
+  .divider{
+    display: none;
+  }
+} 
+@media(min-width: 1466px ) {
+  .custom-input input[type=text], select, textarea {
+    width: 91%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  
+  }
+  .custom-input input[type=password], select, textarea {
+    width: 91%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  
+  }
+  .custom-input input[type=number], select, textarea {
+    width: 91%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  } 
+
+
+}
+/*=============REGISTER FORM STYLE==========================================================*/

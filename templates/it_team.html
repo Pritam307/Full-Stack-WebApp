@@ -1,0 +1,245 @@
+
+{% extends 'base.html' %}
+{% block title%}IT TEAM{% endblock %}
+{% block content %}   
+
+        
+
+            <!--Important Notice-->
+
+    <!--         <div class="card bg-danger rounded-0 mt-0">
+                <div class="card-header">
+                  <marquee><h4 class="font-weight-bold text-white my-sm-auto my-md-3">This Site is Under Contruction.To know more about us or for any queries please visit the ContactUs page or scroll down.</h4></marquee>
+                </div>
+              </div> -->
+
+
+                                                <!--Starting of Content or Body part-->
+
+          <div id="subpage-header-back" class="card rounded-0 text-white mb-3">
+              <div class="card-header text-center text-justify my-3">
+                <h5 class="h2 font-weight-bold">IT Team</h5>
+                <div class="row">
+                  <div class="col-4"></div>
+                  <div class="col-4 text-center">
+                      
+                      <div class="bc-icons">
+                            <ul class="cus-breadcrumb bg-transparent ">
+                                <li class="breadcrumb-item h6"><a class="text-blue " href="#">Home</a><i class="fas fa-caret-right mx-2"
+                                    aria-hidden="true"></i></li>
+                                <li class="breadcrumb-item active h6"><a class="text-white " href="#">IT Team</a></li>
+                            </ul>
+                      </div> 
+                  </div> 
+
+                  <div class="col-4"></div>
+                </div>  
+              </div>
+            </div> 
+
+
+                  <!--DONATION BUTTON SIDEBAR-->
+		      <div id="mySideNav" class="sidenav">
+		        <a href="donate.html" id="donate">Donate Now</a>
+		      </div>
+
+
+            <!--IT Team CARD-->
+
+          <div class="container ">
+            <div class="row py-3">
+              <div class="col-md-6 d-flex justify-content-lg-end justify-content-center my-3 ">
+
+                  <div class="card mx-md-2 text-center it_card mb-3" style="width: 20rem;">
+                    <img src="{{url_for('static',filename='img/profile-pic.jpg')}}" class="card-img-top image" style="height: 22rem;" alt="...">
+                    <div class="overlay d-flex align-items-center justify-content-center" style="height: 22rem;">
+                      <div class="card rounded-0 border-0 bg-transparent">
+                        <div class="card-body ">
+                          <h4 class="text-white font-weight-normal" style="font-family: 'Nunito', sans-serif;">Follow me</h4>
+                          <a href="https://github.com/Pritam307" target="_blank"><i style="font-size: 27px; color: white;" class="fab fa-github mr-3"></i></a>
+                          <a href="https://www.linkedin.com/in/pritam-kundilya-a86bb7127/" target="_blank"><i style="font-size: 27px; color: white;" class="fab fa-linkedin mr-3"></i></a>
+                          <a href="https://www.google.com" target="_blank"><i style="font-size: 27px; color:white;" class="fab fa-twitter "></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title" style="font-family: 'Nunito', sans-serif;" >Web Development Head</h5>
+                    </div>
+                  </div>
+
+              </div>
+
+              <div class="col-md-6 d-flex justify-content-md-start justify-content-center my-3 ">
+
+                <div class="card mx-md-2 text-center it_card mb-3" style="width: 20rem; ">
+                  <img src="{{url_for('static',filename='img/bibek_goswami_pic.jpg')}}" class="card-img-top image" style="height: 22rem;" alt="...">
+                   <div class="overlay d-flex align-items-center" style="height: 22rem;">
+                      <div class="card-body text-center">
+                          <h4 class="text-white font-weight-normal" style="font-family: 'Nunito', sans-serif;">Follow me</h4>
+                          <a href="https://github.com/Pritam307" target="_blank"><i style="font-size: 27px; color: white;" class="fab fa-github mr-3"></i></a>
+                          <a href="https://www.linkedin.com/in/pritam-kundilya-a86bb7127/" target="_blank"><i style="font-size: 27px; color: white;" class="fab fa-linkedin mr-3"></i></a>
+                          <a href="https://www.google.com" target="_blank"><i style="font-size: 27px; color:white;" class="fab fa-twitter "></i></a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title" style="font-family: 'Nunito', sans-serif;">Mobile App Design Head</h5>
+                    </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          <!--SIGN UP PAGE CONTENTWS-->
+
+<!--       <div class=" modal fade" id="signUpmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" id="signin-modal">
+              <div class="custom-modal">
+                <h5 class=" modal-title text-center mt-4 h3" style="font-family: 'Open Sans', sans-serif;">Welcome to SEWA</h5>
+              </div>
+
+              <div class="modal-body">
+                <form>
+
+                  <div class="form-group mx-3 my-3" >
+                    <input type="email" id="cus-form-input" class="form-control text-center font-weight-bold" id="exampleFormControlInput1" placeholder="Username">
+                  </div>
+
+                   <div class="form-group mx-3 my-3">
+                     <input type="password" id="cus-form-input" class="form-control text-center font-weight-bold" id="exampleFormControlInput1" placeholder="Password">
+                  </div>
+
+                  <div class="custom-control custom-checkbox my-3 ml-3">
+                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                    <label class="custom-control-label" for="customCheck1" style="font-family: 'Open Sans', sans-serif;">Remember me</label>
+                  </div>
+
+                  <button type="button" class="btn btn-primary mb-3 ml-3" style="font-family: 'Open Sans', sans-serif;">SignIn</button>
+
+                  <p class="text-center font-weight-bold h6 " style="font-family: 'Ubuntu', sans-serif;" >OR</p>
+                  <div class="card rounded-0">
+                  <div class="card-body text-center">
+                   <div class="col-5 card-body">
+                      <p class="font-weight-normal h6 ml-2" style="font-family: 'Ubuntu', sans-serif;">Sign in with:</p>
+                    </div> 
+                      <div class="card-body">
+                              
+                        <a href="https://www.facebook.com/sewapublic" target="_blank"><i style="font-size: 30px; color:#9C27B0;" class="fab fa-facebook-square mr-3"></i></a>
+                        <a href="https://www.google.com" target="_blank"><i style="font-size: 30px; color:#9C27B0" class="fab fa-google-plus mr-3"></i></a>
+                        <a href="https://www.google.com" target="_blank"><i style="font-size: 30px; color: #9C27B0;" class="fab fa-linkedin-in mr-3"></i></a>
+                        <a href="https://www.google.com" target="_blank"><i style="font-size: 30px; color: #9C27B0;" class="fab fa-twitter mr-3"></i></a>
+                                
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="container d-flex flex-row justify-content-center"> 
+                    <p>Not a Member?</p>
+                    <a href=""><p>SignUp Now</p></a>
+                  </div>
+
+                </form>
+              </div>
+
+              
+            </div>
+          </div>
+        </div> -->
+
+
+
+
+
+
+
+
+              
+          <!--MAIN CONTENT OF BODY-->
+
+
+          <!-- <div class="card rounded-0 my-3 mx-3">
+        
+            <div class="card-body">
+              
+              <div class="col">
+                                    <div class="row-sm-6">
+
+                                        <div class="card text-center bg-white rounded-0 mt-2">
+                                          <div class="row no-gutters">
+                                              <div class="col-md-4">
+                                                <div class="col">
+                                                  <div class="row-9">
+                                                    <img src="img/profile_pic_pk.png" width="140" height="140" class="img-border align-self-center mx-2 rounded-circle " alt="...">
+                                                  </div>
+                                                  <div class="row-3 mt-3 text-center">
+                                                      <h5 class="card-title text-dark font-weight-bold h5">Web Design Head</h5>
+                                                  </div>
+                            
+                                                </div> 
+                                              </div>
+                                              <div class="col-md-8">
+                                                <div class="card-body col">
+                                                  <div class="row-8 my-md-3">
+                                                    <p class="card-title font-italic text-dark font-weight-bold h3">Pritam Kundilya</p>
+                                                    
+                                                </div>
+                                                <div class="row-4  my-md-3">
+                                                    <h5 class="card-title text-center text-dark font-weight-bold h5">FOLLOW ME ON</h5> 
+                                                    <a href="https://github.com/Pritam307" target="_blank"><i style="font-size: 25px; color:rgb(0, 0, 0);" class="fab fa-github mr-3"></i></a>
+                                                    <a href="https://www.linkedin.com/in/pritam-kundilya-a86bb7127/" target="_blank"><i style="font-size: 25px; color:rgb(0, 0, 0);" class="fab fa-linkedin mr-3"></i></a>
+                                                    <a href="https://www.google.com" target="_blank"><i style="font-size: 25px; color:rgb(0, 0, 0);" class="fab fa-twitter mr-3"></i></a>
+                                                    
+                                                </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                   <!-
+                                   <div class="line-border"></div> 
+                                    <div class="row-sm-6">
+                                      <div class="card text-center bg-white rounded-0 mt-3">
+                                        <div class="row no-gutters">
+                                            <div class="col-md-4">
+                                              <div class="col">
+                                                <div class="row-9">
+                                                  <img src="img/bibek_goswami_pic.png" width="140" height="140" class="img-border align-self-center mx-2 rounded-circle " alt="...">
+                                                </div>
+                                                <div class="row-3 mt-3 text-center">
+                                                    <h5 class="card-title text-dark font-weight-bold h5">Mobile App Head</h5>
+                                                </div>
+                          
+                                              </div> 
+                                            </div>
+                                            <div class="col-md-8">
+                                              <div class="card-body col">
+                                                <div class="row-8 my-md-3">
+                                                  <p class="card-title font-italic text-dark font-weight-bold h3">Bibek Goswami</p>
+                                                  
+                                              </div>
+                                              <div class="row-4  my-md-3">
+                                                  
+                                                  <a href="https://github.com/bibek1997" target="_blank"><i style="font-size: 25px; color:rgb(10, 10, 10);" class="fab fa-github mr-3"></i></a>
+                                                  <a href="https://www.linkedin.com/in/bibek-goswami-09a7ba156" target="_blank"><i style="font-size: 25px; color:rgb(10, 10, 10);" class="fab fa-linkedin mr-3"></i></a>
+                                          
+                                              
+                                              </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                      </div>
+                                    </div>
+            </div>
+          </div>
+        </div> -->
+
+
+
+
+ {% endblock %}

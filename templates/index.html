@@ -1,0 +1,512 @@
+{% extends 'base.html' %}
+{% block title%}HOME{% endblock %}
+
+{% block content %}    
+                                          <!--Starting of Content or Body part-->
+
+        <div class="bd-example">
+          <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" >
+            <ol class="carousel-indicators mb-5">
+              <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+              <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+              <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+            </ol>
+
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+               <div class="image-wrap"><img src={{url_for('static',filename='img/slide_1.jpg')}} class="facilitiesImage d-block w-100" alt="..."></div> 
+                <div class="carousel-caption d-block mb-4">
+                  <p class="font-weight-normal h2 mb-sm-3">Interactive Session among Tribal Community Youth in order to develop Self-Sustenance</p>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="image-wrap"><img src={{url_for('static',filename='img/slide_2.jpg')}} class="facilitiesImage d-block w-100" alt="..."></div> 
+                <div class="carousel-caption d-block mb-4">
+                  <!--<h5 class="font-weight-bold h4 mb-3">First slide label</h5> -->
+                  <p class="font-weight-normal h2 mb-sm-3">Bringing Justice to Environment and Mankind through new Employment Opportunities in Organic Cultivation</p>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="image-wrap"><img src={{url_for('static',filename='img/slide_3.png')}} class="facilitiesImage d-block w-100" alt="..."></div> 
+                <div class="carousel-caption d-block mb-4">
+                  <!--<h5 class="font-weight-bold h4 mb-3">First slide label</h5> -->
+                  <p class="font-weight-normal h2 mb-sm-3">Depicting our workmanship during an Exhibition to Public Representative</p>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="image-wrap"><img src={{url_for('static',filename='img/slide_5.jpg')}} class="facilitiesImage d-block w-100" alt="..."></div> 
+                <div class="carousel-caption d-block mb-4">
+                  <!--<h5 class="font-weight-bold h4 mb-3">First slide label</h5> -->
+                  <p class="font-weight-normal h2 mb-sm-3">Right Technology and right guidance - That's how we believe to Empower Women</p>
+                </div>
+              </div>
+
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+    
+
+              <!--Notification-->
+        <div class="container blur" id="notification">
+          <div class="row">
+
+            <div class="col-md-2 p-0 m-0">
+              <div class="card border-0  text-center bg-success mt-3 flex-shrink-1 d-flex justify-content-start p-0" >
+                <div class="card-body m-0 p-0">
+                  <i class="la la-sticky-note d-inline-block mt-3" style="color: #fff; font-size: 25px;"></i>
+                  <div class="d-inline-block mt-2">
+                    <p class="font-weight-bold text-white  d-none d-sm-none d-md-none d-lg-block" >Whats New?</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-10 p-0 m-0">
+              <ul class="notify-slider d-flex justify-content-center ml-2">
+                <li class="my-2">
+                  <a href="#"><small>This is partial notification from Officaila sewa website</small></a>
+                </li>
+
+                <li class="my-2 ">
+                  <a href="#"><small>item1</small></a>
+                </li>
+
+                <li class="my-2 ">
+                  <a href="#"><small>item1</small></a>
+                </li>
+
+                <li class="my-2 ">
+                  <a href="#"><small>item1</small></a>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+       
+        </div>
+        
+        <!--DONATION BUTTON SIDEBAR-->
+        <div id="mySideNav" class="sidenav">
+          <a href= {{url_for('donate')}} id="donate">Donate Now</a>
+        </div>
+
+
+
+
+        <!--Important Notice-->
+
+   <!--      <div class="card border-0 bg-danger rounded-0 mt-0">
+          <div class="card-header">
+            <marquee><h4 class="font-weight-bold text-white my-sm-auto my-md-3">This Site is Under Contruction.To know more about us or for any queries please visit the ContactUs page or scroll down.</h4></marquee>
+          </div>
+        </div> -->
+
+        <!--UNDER CONSTRUCTION NOTICE-->
+
+        <div class="modal fade bd-example-modal-lg" id="myConstructionModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+              <div class="modal-content bg-warning">
+                <div class="container my-3 text-center">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                <div class="modal-body mb-3">
+                 <!-- <p class="text-justify text-white text-center h5">
+                    This site is Under Construction. For any queries Please visit the Contact Us page or see the bottom section
+                  </p> -->
+                  <div class="card border-0 rounded-0 bg-transparent">
+                      <img class="img-responsive" src={{url_for('static',filename='img/under-construction-site.png')}}>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+
+
+        <!--ABOUT SEWA DESCRIPTION-->
+
+        <div class="card-group mx-sm-2 my-md-3 border-0">
+
+              <div class="card border-0 text-center mx-sm-3">
+                <div class="card-body">
+                    <div class="card border-0 mb-2 rounded-0">
+                        <div class="row ">
+                          <div class="col-3 ">
+                            <img src={{url_for('static',filename='img/socio economic.png')}} class="image-responsive my-sm-2 mr-md-3" width="50" height="50" alt="...">
+                          </div>
+                          <div class="col-9">
+                              <h5 class="card-title text-left font-weight-bold h5 my-sm-4  ml-md-2">SocioEconomic</h5>
+                          </div>
+                        </div>
+                      </div> 
+
+                  <p class="card-text text-justify">It is an organization of poor, vulnerable and every energetic Indian who believes in himself. It organizes vulnerable workers for full employment of 
+                    work security, income security, food security including health care, 
+                    child care and shelter. Helping to achieve people goals of full employment and 
+                    self reliance through the strategy of struggle and development.</p>
+                  <a href="contact_us.html" class="btn btn-primary">More info</a>
+                </div>
+              </div>
+
+              <div class="card  border-0 text-center mx-sm-3">
+                  <div class="card-body">
+                      <div class="card border-0 mb-2 rounded-0">
+                      <div class="row ">
+                        <div class="col-3 ">
+                          <img src={{url_for('static',filename='img/education1.png')}} class="image-responsive my-sm-2  mr-md-3" width="50" height="50" alt="...">
+                        </div>
+                        <div class="col-9">
+                            <h5 class="card-title text-left font-weight-bold h5 my-sm-4 ml-md-2">Cultural & Education</h5>
+                        </div>
+                      </div>
+                    </div> 
+                    <p class="card-text text-justify">These organizations help those groups that earn a living through their 
+                      own labour or small business. Gandhian thinking is the guiding force for SEWA's poor, 
+                      self employed members in organizing for social change. The main goal to avail of the 
+                      new opportunities with regard to employment, strengthening women’s leadership, confidence, 
+                      representation in policy making and bargaining power within or outside their homes.</p>
+                    <a href="contact_us.html" class="btn btn-primary">More info</a>
+                  </div>
+                </div>
+
+
+              <div class="card border-0 text-center mx-sm-2">
+                    <div class="card-body">
+
+                        <div class="card border-0 mb-2 rounded-0">
+                            <div class="row ">
+                              <div class="col-3 ">
+                                <img src={{url_for('static',filename='img/research.png')}} class="image-responsive my-sm-2  mr-md-3" width="68" height="50" alt="...">
+                              </div>
+                              <div class="col-9">
+                                  <h5 class="card-title text-left font-weight-bold h5 my-sm-4  ml-md-2">Reasearch & Development</h5>
+                              </div>
+                            </div>
+                          </div> 
+                      <p class="card-text text-justify">It involves the struggle against the many constraints and limitations 
+                        imposed on people by society and the economy, while development activities strengthen 
+                        bargaining power and offer them new alternatives. Practically the strategy is carried out 
+                        through the joint action of union and co-operatives. Enhancing of women empowerment by 
+                        developing their communication and work skill is the main objective of this organization.</p>
+                      <a href="contact_us.html" class="btn btn-primary">More info</a>
+                    </div>
+                  </div>
+          </div>
+          
+          
+           <!--What others have to say  -->
+
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+
+                <div class="carousel-item active" data-interval="1000">
+                    <div class="card border-0 text-center bg-dark-blue rounded-0 mt-3 py-3">
+                        <div class="row no-gutters my-4">
+                             <div class="col-md-4 mt-2">
+                               <div class="col">
+                                 <div class="row-9">
+                                   <img src={{url_for('static',filename='img/jakob-owens_new.jpg')}} width="180" height="180" class="img-border align-self-center mx-3 rounded-circle " alt="...">
+                                 </div>
+                                 <div class="row-3 mt-3 text-center">
+                                     
+                                     <p class=" card-title font-weight-bold h4">Jacob Owens</p>
+                                  
+                                 </div>
+           
+                               </div> 
+                             </div>
+                             <div class="col-md-7 mx-sm-3 my-2">
+                               <div class="card-body">
+                                 <h5 class="card-title font-weight-bold  h2">What Others Say About Us</h5>
+                                 <p class="card-text text-justify font-italic my-md-2 h5">"This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."</p>
+                               </div>
+                             </div>
+                           </div>
+                       </div>
+                  </div>
+                  <div class="carousel-item" data-interval="1000">
+                      <div class="card border-0 text-center bg-dark-blue rounded-0 mt-3 py-3">
+                          <div class="row no-gutters my-4">
+                              <div class="col-md-4 mt-2">
+                                <div class="col">
+                                  <div class="row-9">
+                                    <img src={{url_for('static',filename='img/jakob-owens_new.jpg')}} width="180" height="180" class="img-border align-self-center mx-3 rounded-circle " alt="...">
+                                  </div>
+                                  <div class="row-3 mt-3">
+                                      <h5 class="card-title font-weight-bold h4">Jacob Owens</h5>
+                                  </div>
+            
+                                </div> 
+                              </div>
+                              <div class="col-md-7 mx-sm-3 my-2">
+                                <div class="card-body">
+                                  <h5 class="card-title font-weight-bold  h2">What Others Say About Us</h5>
+                                  <p class="card-text text-justify font-italic my-md-2 h5">"This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."</p>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                  </div>
+
+                  <div class="carousel-item" data-interval="1000">
+                      <div class="card border-0 text-center bg-dark-blue rounded-0 mt-3 py-3">
+                          <div class="row no-gutters my-4">
+                              <div class="col-md-4 mt-2">
+                                <div class="col">
+                                  <div class="row-9">
+                                    <img src={{url_for('static',filename='img/jakob-owens_new.jpg')}} width="180" height="180" class="img-border align-self-center mx-3 rounded-circle " alt="...">
+                                  </div>
+                                  <div class="row-3 mt-3">
+                                      <h5 class="card-title font-weight-bold h4">Jacob Owens</h5>
+                                  </div>
+            
+                                </div> 
+                              </div>
+                              <div class="col-md-7 mx-sm-3 my-2">
+                                <div class="card-body">
+                                  <h5 class="card-title font-weight-bold  h2">What Others Say About Us</h5>
+                                  <p class="card-text text-justify font-italic my-md-2 h5">"This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."</p>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+              </div>
+            </div> 
+        
+      
+        <!--Any questions  -->
+
+            <div class="card border-0 text-center bg-gradient rounded-0">
+              <div class="card-header rounded-0 py-sm-4">
+                <div class="row">
+                    <div class="col-6 my-sm-3 ">
+                        <h2 class="font-weight-normal text-white my-sm-auto">Having Any Questions?</h2>
+                    </div>
+                    <div class="col-6  my-3 ">
+                          <!-- <a href="#" style="text-decoration: none;"> --><button type="button" class="button my-sm-auto" data-toggle="modal" data-target=".questions-modal" >GET IN TOUCH </button><!--</a> -->
+                    </div>
+                </div>
+              </div>
+            </div>
+            
+
+            <div class="modal fade questions-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+                 
+                  <form class="card rounded-0 border-0 bg-white" action="/contact" method="post">
+                    <div class="modal-body">
+                      <div class="form-row ">
+                        <div class="form-group col-md-6">
+                          <label>First Name</label>
+                          <input type="text" class="form-control" name="first_name" placeholder="Enter First Name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Last Name</label>
+                            <input type="text" class="form-control"  name="last_name" placeholder="Enter Last Name">
+                        </div>
+                      </div>
+                        <div class="form-group">
+                          <label for="inputAddress">Address</label>
+                          <input type="text" class="form-control" name="address"  placeholder="Your Adddress">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Email Address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  name="email" placeholder="Enter email">
+                        </div>
+                        <div class="form-group  ">
+                            <label for="inputAddress">Phone Number</label>
+                            <input type="number" class="form-control"  name="phone"  placeholder="+91-00000">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Your Question</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"  name="message" placeholder="Type your message..."></textarea>
+                        </div>
+                  
+                        <!-- <button type="submit" class="btn btn-primary btn-outline-success text-white text-center">Send Message</button> -->
+                    
+                  </div>
+
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary btn-outline-success text-white text-center">Send Message</button>
+                  </div>
+
+                </form>
+
+                </div>
+              </div>
+            </div>
+
+            <!--Jioning sewa-->
+            <div class="card border-0 text-center bg-dark-blue rounded-0 mt-0">
+              <div class="card-header rounded-0">
+                <div class="row">
+                  <div class="col-sm-6 ">
+                      <h3 class="font-weight-normal text-center text-body my-sm-auto my-md-3">Join The SEWA Community!</h3>
+                  </div>
+                  <div class="col-sm-3 my-3">
+                      <input type="email" class="form-control rounded-pill bg-dark text-white rounded-lg" id="inputPassword2" placeholder="Enter Email">
+                  </div>
+                  <div class="col-sm-3 my-3">
+                    <button type="submit" class="btn btn-outline-success">Subscribe Now</button>
+                  </div>
+                </div>      
+              </div>
+            </div>
+            
+            <!--NUMBERS OF PROJECTS, MEMEBERS, PARTNER ORGANISATIONS etc-->
+            <div class="line-border"></div>
+
+            <div class="card border-0 bg-dark-blue text-center rounded-0">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="card-body col-md-3 my-sm-2">
+                        <div class="stat-item">
+                            <i class="fas fa-code my-sm-2" style="font-size: 40px; color:#ffffff"></i>
+                            <h2><span class="counter  my-sm-2" data-counterup-time="1500" data-counterup-delay="30" data-counterup-beginat="5">100</span><span>+</span></h2>
+                            <p class="card-text my-sm-3 h5 font-weight-bold text-uppercase">PROJETCS</p>
+                        </div>
+                    </div>
+                    <div class="card-body col-md-3 my-sm-2">
+                        <div class="stat-item">
+                            <i class="fas fa-users my-sm-2" style="font-size: 40px; color:#ffffff"></i>
+                            <h2><span class="counter  my-sm-2" data-counterup-time="1500" data-counterup-delay="30" data-counterup-beginat="100">25400</span><span>+</span></h2>
+                            <p class="card-text my-sm-3 h5 font-weight-bold text-uppercase">MEMBERS</p>
+                        </div>
+                    </div>
+                    <div class="card-body col-md-3 my-sm-2">
+                        <div class="stat-item">
+                            <i class="fas fa-handshake my-sm-2" style="font-size: 40px; color:#ffffff"></i>
+                            <h2><span class="counter  my-sm-2" data-counterup-time="1500" data-counterup-delay="30" data-counterup-beginat="1">11</span><span>+</span></h2>
+                            <p class="card-text my-sm-3 h5 font-weight-bold text-uppercase  ">partner Organizations</p>
+                        </div>
+                    </div>
+
+                    <div class="card-body col-md-3 my-sm-2" >
+                        <div class="stat-item">
+                            <i class="fas fa-hand-holding-usd my-sm-2" style="font-size: 40px; color:#ffffff" ></i>
+                            <h2><span class="counter  my-sm-2" data-counterup-time="1500" data-counterup-delay="30" data-counterup-beginat="10">100</span><span>+</span></h2>
+                            <p class="card-text my-sm-3 h5 font-weight-bold text-uppercase">donators</p>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+            <!--VIDEO GALLERY SECTION-->
+            
+            <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active" > 
+                        <div class="card border-0 text-center bg-primary rounded-0 py-3">
+                          <div class="row no-gutters my-4">
+                             <div class="col-md-1"></div>
+                              <div class="col-md-4 align-items-center" >
+                                <a href={{url_for('video_gallery')}}><div class="video-icon-slider card-body mr-md-4">
+                                  <img src={{url_for('static',filename='img/fstory_1.jpg')}} width="250" height="60" class="img-fluid align-self-center px-3 " alt="..." >
+                                </div></a>
+                              </div> 
+                               <div class="col-md-1"></div>
+                              <div class="col-md-4 ml-md-3 my-2">
+                                <div class="card-body">
+                                  <h5 class="card-title font-weight-bold h2 text-uppercase">Success Stories</h5>
+                                  <p class="card-text text-justify font-italic h4 mt-3">{{sewa_links["story_1"]}}</p>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="carousel-item">
+                        <div class="card border-0 text-center bg-success rounded-0 py-3" >
+                          <div class="row no-gutters my-4">
+                             <div class="col-md-1"></div>
+                              <div class="col-md-4 align-items-center" >
+                                <a href={{url_for('video_gallery')}}><div class="video-icon-slider card-body  mr-md-4">
+                                  <img src={{url_for('static',filename='img/fstory_2.jpg')}}  width="250" height="60" class="img-fluid  align-self-center px-3 " alt="..." >
+                                </div></a>
+                              </div> 
+                               <div class="col-md-1"></div>
+                              <div class="col-md-4 ml-md-3 my-2">
+                                <div class="card-body ">
+                                  <h5 class="card-title font-weight-bold h2 text-uppercase">Success Stories</h5>
+                                  <p class="card-text text-justify font-italic h4 mt-3">{{sewa_links["story_2"]}}</p>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="carousel-item" >
+                    <div class="card border-0 text-center bg-secondary rounded-0 py-3">
+                          <div class="row no-gutters my-4">
+                             <div class="col-md-1"></div>
+                              <div class="col-md-4 align-items-center" >
+                                <a href={{url_for('video_gallery')}}><div class="video-icon-slider card-body  mr-md-4">
+                                  <img src={{url_for('static',filename='img/fstory_3.jpg')}} width="250" height="60" class="img-fluid align-self-center px-3 " alt="..." >
+                                </div></a>
+                              </div> 
+                              <div class="col-md-1"></div>
+                              <div class="col-md-4 ml-md-3 my-2">
+                                <div class="card-body">
+                                  <h5 class="card-title font-weight-bold  h2 text-uppercase">Success Stories</h5>
+                                  <p class="card-text text-justify font-italic h4 mt-3">{{sewa_links["story_3"]}}</p>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <i style="font-size: 35px" class="la la-chevron-circle-left" aria-hidden="true"></i>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <i style="font-size:  35px" class="la la-chevron-circle-right" aria-hidden="true"></i>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+            
+
+{% endblock %}           
+
+
+
+            
+          
+  
+
+
+
+
+    

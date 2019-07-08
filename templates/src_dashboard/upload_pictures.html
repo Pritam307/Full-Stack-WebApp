@@ -1,0 +1,131 @@
+{% extends 'src_dashboard/dash_layout.html' %}
+{% from 'src_dashboard/macros.html' import render_pagination %}
+{% block content %}
+
+
+<div class="container-fluid">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              <ul class=flashes>
+              {% for category, message in messages %}
+                   <div class="alert alert-{{ category }} text-center fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span></button>
+                        {{ message }}
+                    </div>
+              {% endfor %}
+              </ul>
+            {% endif %}
+    {% endwith %}
+</div>
+
+
+<div class="container-fluid ">
+	<div class="container-fluid text-center">
+		<h5>Upload single Image</h5>
+	</div>
+	<form method="post" action="/dashboard/gallery_pictures" enctype="multipart/form-data">
+
+			<div class="input-group mb-3">
+			  <div class="input-group-prepend">
+			    <button class="btn btn-outline-secondary" type="submit" value="Submit" id="inputGroupFileAddon03" required>Upload</button>
+			  </div>
+
+			  <div class="custom-file">
+			    <input type="file" name="file" class="custom-file-input" id="customFile" >
+			    <label class="custom-file-label" for="customFile">Choose file</label>
+			  </div>
+			</div>
+<!-- 			<input type="file" name="file" autocomplete="off" required>
+		
+			<input type="submit" value="Submit">
+	 -->
+
+	</form>
+</div>
+
+
+<div class="container-fluid py-3">
+	<div class="container-fluid text-center">
+		<h5>Upload Multiple Image</h5>
+	</div>
+	<form method="post" action="/dashboard/gallery_pictures/multi" enctype="multipart/form-data">
+
+			<div class="input-group mb-3">
+			  <div class="input-group-prepend">
+			    <button class="btn btn-outline-secondary" type="submit" value="Submit" id="inputGroupFileAddon03" required>Upload</button>
+			  </div>
+
+			 <div class="custom-file">
+
+			  <input type="file" name="file[]" multiple class="custom-file-input">
+			  <label class="custom-file-label" for="inputGroupFile01">Choose several files</label>
+
+			</div>
+			</div>
+		</form>
+</div>
+
+<div class="container-fluid d-flex justify-content-center my-3">
+	<a href="{{url_for('upload_pictures')}}"><button class="btn btn-primary" >Reset all</button></a>
+</div>
+
+
+<div class="table-responsive py-3">
+    <table class="table table-bordered table-hover text-center ">
+      <thead class="thead-dark">
+        <tr>
+          <!-- <th scope="col">Slno</th> -->
+          <th scope="col" class="text-uppercase">ImageName</th>
+          <th scope="col" class="text-uppercase">Image Path</th>
+          <th scope="col" class="text-uppercase">Remove</th>
+        </tr>
+      </thead>
+      <tbody>
+      	{% set in = 0 %}
+        {% for img in listimg.items %}
+        <thead class="text-center user-table thead-light">
+
+            <tr>
+              <!-- <th scope="row">{{in}}</th> -->
+              <td>{{img.imgname}}</td>
+              <td>{{img.imgpath}}</td>
+   			  <td><a href="#" data-toggle="modal" data-target="#exampleModalCenter"><i class="la la-trash-o" style="opacity: 0.7"></i></a></td>
+   			</tr>
+        </thead> 
+      
+<!--         {% set in=(in+1)%}
+        <p>{{in}}</p> -->
+
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header text-center my-0">
+                  <p class="text-danger font-weight-bold">Warning</p>
+              </div>  
+              <div class="modal-body text-center">
+                <p class="text-dark">Do you want to remove this picture?</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <a href="{{url_for('delImg',imgname=img.imgname)}}"><button type="button" class="btn btn-primary">Delete</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div class="container-fluid d-flex justify-content-center mt-4">
+        {{render_pagination(listimg,'picturepages')}}
+    </div>
+
+
+
+
+
+
+{% endblock %}

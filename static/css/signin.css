@@ -1,0 +1,189 @@
+/*=============SIGN IN FORM STYLE==========================================================*/
+@import "https://fonts.googleapis.com/css?family=Karla&display=swap";
+
+body{
+  font-family: 'Karla',sans-serif;
+  /*background: linear-gradient(90deg,#59a2e6,#254e8d);*/
+   background-image: linear-gradient(90deg,#9C27B0,#111120);
+}
+
+a{
+  text-decoration: none;
+  outline: none;
+}
+a:hover{
+  text-decoration: none;
+  outline: none;
+}
+
+#signin-card{
+  margin-top: 35px;
+  padding-top: 40px;
+  /*border-color: #59a2e6;*/
+  border-radius: 15px 15px 15px 15px;
+  min-width: 25rem;
+  width: 50%;
+}
+
+  #cus-validators .form-group.has-error.required p{
+    color: red;
+    margin-left: 10px;
+    font-size: 12px;
+  }
+
+.top-card.card{
+    margin:0;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    min-height: 30px;
+    background-color: #4382bc;
+    color: #fff;
+
+    border-radius: 15px 15px 0px 0px;
+}
+#signin-card p{
+  justify-content: center;
+  font-family: "Open Sans",sans-serif;
+  color: #fff;
+  font-size: 3vw;
+
+}
+@media(min-width: 1466px ) {
+    #signin-card{
+     margin-top: 100px;
+  }
+  #signin-card p{
+    font-size: 2vw;
+  }
+}
+@media( max-width:414px ){
+    #signin-card{
+     margin-top: 30px;
+     min-width: 20rem
+  }
+  #signin-card p{
+    font-size: 5vw;
+  }
+}
+
+.cus-form-input{
+  border-radius: 15px 15px 15px 15px; 
+  height: 46px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.btn1{
+    color: rgba(255,255,255,1);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    font-size: 20px;
+    position: relative;
+     background-color: #4382bc;
+    border: 1px solid rgba(255,255,255,0.5);
+     border-radius: 15px;
+     margin-bottom: 30px;
+}
+.simbtn{
+    line-height: 45px;
+    height: 50px;
+    text-transform: uppercase;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 94%;
+    cursor: pointer;
+}
+
+.btn1:hover{
+    color: rgba(255,255,255,1);
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+    position: relative;
+    color: #fff;
+    background-color: #111120;
+}
+
+.btn1 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+  font-size: 20px;
+}
+
+.btn1 span:after {
+  content: '\27A4';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.btn1:hover span {
+  padding-right: 30px;
+
+}
+
+.btn1:hover span:after {
+  opacity: 1;
+  right: 0;
+
+}
+
+.bottom-text{
+  margin-top: 60px;
+}
+.bottom-text.text-no-accnt{
+  font-size: 15px;
+  color: black;
+}
+.text-signup{
+  font-size: 15px;
+  color:  #4382bc;
+  text-transform: uppercase;
+}
+.text-signup a{
+  text-decoration: none;
+  color:  #4382bc;
+}
+.text-signup a:hover{
+  color: #111120;
+  font-size: 10px;
+  transition: ease-out 0.3s;
+}
+.control-label{
+  display: none;
+}
+.custom-control .checkbox{
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.custom-control .checkbox label{
+  font-size: 18px;
+  text-transform: capitalize;
+  font-style: bold;
+}
+.custom-checkbox.checkbox input[type="checkbox"] select{
+  border-radius: 15px;
+  width: 40px;
+  height: 40px;
+
+
+}
+
+/*=============SIGN IN FORM STYLE==========================================================*/

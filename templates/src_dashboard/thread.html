@@ -1,0 +1,19 @@
+{% extends 'src_dashboard/dash_layout.html' %}
+{% from "src_dashboard/macros.html" import render_pagination %}
+{% block content %}
+
+
+{% for page in thread.items %}
+	<div class="card">
+		<div class="card-body">
+			<p>{{page.title}}</p>
+		</div>
+	</div>
+{% endfor %}
+
+
+
+{{render_pagination(thread,'threads')}}
+
+
+{% endblock %}

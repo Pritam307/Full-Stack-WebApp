@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+{% block title%}CONTACT{% endblock %}
+{% block content %}
+                                            <!--Starting of Content or Body part-->
+
+            <!--SUB HEADER PART-->
+            <div id="subpage-header-back" class="card rounded-0 text-white mb-3">
+              <div class="card-header text-center text-justify my-3">
+                <h5 class="h2 font-weight-bold">CANTACT US</h5>
+                <div class="row">
+                  <div class="col-4"></div>
+                  <div class="col-4 text-center">
+                      
+                      <div class="bc-icons">
+                            <ul class="cus-breadcrumb bg-transparent ">
+                                <li class="breadcrumb-item h6"><a class="text-blue " href={{url_for('index')}}>Home</a><i class="fas fa-caret-right mx-2"
+                                    aria-hidden="true"></i></li>
+                                <li class="breadcrumb-item active h6"><a class="text-white " href="#">Contact Us</a></li>
+                            </ul>
+                      </div> 
+                  </div> 
+
+                  <div class="col-4"></div>
+                </div>  
+              </div>
+            </div>
+
+            <!--Important Notice-->
+
+            <div class="card border-0 bg-danger rounded-0 mt-0">
+                <div class="card-header">
+                  <marquee><h4 class="font-weight-bold text-white my-sm-auto my-md-3">This Site is Under Contruction.To know more about us or for any queries please visit the ContactUs page or scroll down.</h4></marquee>
+                </div>
+              </div>
+
+
+
+              <!--MAIN CONTENT-->
+              <div class="container rounded-0 my-4">
+                 <p class="card-title font-weight-bol text-center h3">OUR LOCATION</p>
+                  <div class="map-responsive">
+                   
+                     <!--Google Map Section-->
+                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14250.23227231968!2d94.22146977293971!3d26.758475341028987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3746dd353962d19f%3A0x6bd8b53e6e9c6eef!2sGohain+Tekela+Gaon%2C+Jorhat%2C+Assam+785010!5e0!3m2!1sen!2sin!4v1554628443184!5m2!1sen!2sin" width="1280" height="600" frameborder="0" style="border:0" ></iframe>
+                    <!--<div id="map"></div> -->
+
+                  </div>
+              </div>
+
+              <div class="card border-0 rounded-0 my-sm-3">
+                <div class="row justify-content-center">
+
+                  <div class= "col-md-4 mx-sm-3">
+                    <form class="card-body" action="/contact" method="post" style="width: 32rem;">
+                      <div class="form-row ">
+                        <div class="form-group col-md-6">
+                          <label>First Name</label>
+                          <input type="text" class="form-control" name="first_name" placeholder="Enter First Name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Last Name</label>
+                            <input type="text" class="form-control"  name="last_name" placeholder="Enter Last Name">
+                        </div>
+                      </div>
+                        <div class="form-group">
+                          <label for="inputAddress">Address</label>
+                          <input type="text" class="form-control" name="address"  placeholder="Your Adddress">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Email Address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  name="email" placeholder="Enter email">
+                        </div>
+                        <div class="form-group  ">
+                            <label for="inputAddress">Phone Number</label>
+                            <input type="number" class="form-control"  name="phone"  placeholder="+91-00000">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Your Message</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"  name="message" placeholder="Type your message..."></textarea>
+                        </div>
+                  
+                        <button type="submit" class="btn btn-primary btn-outline-success text-white  text-right">Send Message</button>
+                    </form>
+                  </div>
+
+                  <div class="col-md-6 ml-sm-3">
+                    <div class="col">
+                      <div class="card-body row-6 text-center  ">
+                        <h5 class="text-white-50 font-weight-bold mx-3">Registered Office Address</h5>
+                        <li class="d-inline-flex justify-content-end " >
+                          <i style="font-size: 15px; color: rgb(0, 0, 0)" class="fas fa-map-marker-alt mr-2 mt-1"></i>
+                          <h6 >Khongia Gaon, Jorhat (ASSAM)</h6>
+                        </li>
+                          <p class="h6 align-items-start">P.O.: Tekela Gaon</p>
+                          <p class="h6 align-items-start">Pin: 785616</p>
+                        <li class="d-inline-flex justify-content-end ">
+                            <i style="font-size: 15px; color: rgb(0, 0, 0)" class="fas fa-phone mr-2 mt-1"></i>
+                            <h6>+91-70025-13935</h6>
+                        </li>
+                        <br>
+                        <li class="d-inline-flex justify-content-end ">
+                            <i style="font-size: 15px; color: rgb(0, 0, 0)" class="fas fa-envelope mr-2 mt-1"></i>
+                            <h6>info@sewaorganisation.org</h6>
+                        </li>
+                      </div>
+
+                      <div class="card-body row-6 text-center  ml-sm-2 mt-sm-2 ">
+                      
+                          <h5 class="text-white-50 font-weight-bold mx-3">District Office Address</h5>
+                          <p class="card-text text-white-50 mx-3 h5">Nort East School of Technical Studies(NESTS)</p>
+                          <li class="d-inline-flex justify-content-end " >
+                            <i style="font-size: 15px; color: rgb(0, 0, 0)" class="fas fa-map-marker-alt mr-2 mt-1"></i>
+                            <h6 >Khongia Gaon, Jorhat (ASSAM)</h6>
+                          </li>
+                            <p class="h6 align-items-start">P.O.: Tekela Gaon</p>
+                            <p class="h6 align-items-start">Pin: 785616</p>
+                          <li class="d-inline-flex justify-content-end ">
+                              <i style="font-size: 15px; color: rgb(0, 0, 0)" class="fas fa-phone mr-2 mt-1"></i>
+                              <h6>+91 8876361254 / +91-70025-13935</h6>
+                          </li>
+                          <br>
+                          <li class="d-inline-flex justify-content-end ">
+                              <i style="font-size: 15px; color: rgb(0, 0, 0)" class="fas fa-envelope mr-sm-2 mt-1"></i>
+                              <h6>nests.edu@gmail.com / info@nests.org.in</h6>
+                          </li>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+   
+            
+    {% endblock %}    
